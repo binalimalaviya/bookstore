@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#E8EAF6"
+        android:padding="16dp">
+
+        <!-- Header and Back Button Layout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btnGoBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/textViewHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="It's Your Book"
+                android:textColor="@color/colorPrimary"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity">
+
+            <SearchView
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="8dp"
+            android:iconifiedByDefault="false"
+            android:queryHint="Search Here" />
+
+            <ListView
+                android:id="@+id/lv1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/searchView"
+                android:divider="#ad5"
+                android:dividerHeight="2dp" />
+
+        </RelativeLayout>
+
+        <!-- Book 1 Layout -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="450dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:background=" #FFFFFF "
+            android:padding="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background=" #FFFFFF ">
+
+                <!-- Book 1 Cover Image -->
+                <ImageView
+                    android:id="@+id/imageViewBookCover1"
+                    android:layout_width="120dp"
+                    android:layout_height="200dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img" />
+
+                <!-- Details LinearLayout for Book 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/imageViewBookCover1"
+                    android:orientation="vertical">
+
+                    <!-- Book 1 Title -->
+                    <TextView
+                        android:id="@+id/textViewBookTitle1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Write a New Name in the Book of Life"
+                        android:textColor="@color/dark_brown"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!-- Book 1 Author(s) -->
+
+                    <!-- Book 1 Publisher -->
+                    <TextView
+                        android:id="@+id/textViewBookAuthor1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Author(s): Dr. Joshep Murphy"
+                        android:textColor="@color/text_light_brown"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/textViewBookPublisher1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Publisher: Fingerprint! Publishing"
+                        android:textColor="@color/text_light_brown"
+                        android:textSize="14sp" />
+
+                    <!-- Book 1 Publication Date -->
+                    <TextView
+                        android:id="@+id/textViewBookPublicationDate1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Publication Date: 1 December 2019"
+                        android:textColor="@color/text_light_brown"
+                        android:textSize="14sp" />
+
+                    <!-- Book 1 Price -->
+                    <TextView
+                        android:id="@+id/textViewBookPrice1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Price: ₹139"
+                        android:textColor="@color/text_light_brown"
+                        android:textSize="14sp" />
+
+                    <!-- See More Button for Book 1 -->
+                    <Button
+                        android:id="@+id/buttonSeeMore1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:onClick="seeMore"
+                        android:text="See More"
+                        android:backgroundTint="@color/accent_lime_green"
+                        android:textColor="@color/dark_brown" />
+
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Book 2 Layout -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:background=" #FFFFFF "
+            android:padding="16dp">
+
+            <RelativeLayout
+                android:layout_width="345dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background=" #FFFFFF ">
+
+                <!-- Book 2 Cover Image -->
+                <ImageView
+                    android:id="@+id/imageViewBookCover2"
+                    android:layout_width="120dp"
+                    android:layout_height="200dp"
+                    android:layout_marginEnd="16dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_1" />
+
+                <!-- Details LinearLayout for Book 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/imageViewBookCover2"
+                    android:orientation="vertical">
+
+                    <!-- Book 2 Title -->
+                    <TextView
+                        android:id="@+id/textViewBookTitle2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="The Motivational Book"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!-- Book 2 Author(s) -->
+                    <TextView
+                        android:id="@+id/textViewBookAuthor2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Author(s): Avinash Kumar (Author), Dirgh Raval (Author)"
+                        android:textColor="@color/text_light_brown"
+                        android:textSize="14sp" />
+
+                    <!-- Book 2 Publisher -->
+                    <TextView
+                        android:id="@+id/textViewBookPublisher2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Publisher: Independently Published"
+                        android:textColor="@color/text_light_brown"
+                        android:textSize="14sp" />
+
+                    <!-- Book 2 Publication Date -->
+                    <TextView
+                        android:id="@+id/textViewBookPublicationDate2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Publication Date: 4 February 2021"
+                        android:textColor="@color/text_light_brown"
+                        android:textSize="14sp" />
+
+                    <!-- Book 2 Price -->
+                    <TextView
+                        android:id="@+id/textViewBookPrice2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Price: ₹338"
+                        android:textColor="@color/text_light_brown"
+                        android:textSize="14sp" />
+
+                    <!-- See More Button for Book 2 -->
+                    <Button
+                        android:id="@+id/buttonSeeMore2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:onClick="seeMore"
+                        android:text="See More"
+                        android:backgroundTint="@color/accent_lime_green"
+                        android:textColor="@color/dark_brown"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Book 3-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:background=" #FFFFFF "
+            android:padding="16dp">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+            android:background=" #FFFFFF ">
+
+                <!-- Book 3 Cover Image -->
+                <ImageView
+                    android:id="@+id/imageViewBookCover3"
+                    android:layout_width="120dp"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_3"
+                    android:layout_marginEnd="16dp" />
+
+                <!-- Details LinearLayout for Book 3 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/imageViewBookCover3"
+                    android:orientation="vertical">
+
+                    <!-- Book 3 Title -->
+                    <TextView
+                        android:id="@+id/textViewBookTitle3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Call Me By Your Name"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!-- Book 3 Author(s) -->
+                    <TextView
+                        android:id="@+id/textViewBookAuthor3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Author(s): André Aciman"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_light_brown"/>
+
+                    <!-- Book 3 Publisher -->
+                    <TextView
+                        android:id="@+id/textViewBookPublisher3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Publisher: It's a novel"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_light_brown"/>
+
+                    <!-- Book 3 Publication Date -->
+                    <TextView
+                        android:id="@+id/textViewBookPublicationDate3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Publication Date: January 23, 2007"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_light_brown" />
+
+                    <!-- Book 3 Price -->
+                    <TextView
+                        android:id="@+id/textViewBookPrice3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Price: ₹238"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_light_brown"/>
+
+                    <!-- See More Button for Book 3 -->
+                    <Button
+                        android:id="@+id/buttonSeeMore3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:onClick="seeMore"
+                        android:text="See More"
+                        android:backgroundTint="@color/accent_lime_green"
+                        android:textColor="@color/dark_brown"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Book 4-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:background=" #FFFFFF "
+            android:padding="16dp">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+            android:background=" #FFFFFF ">
+
+                <!-- Book 4 Cover Image -->
+                <ImageView
+                    android:id="@+id/imageViewBookCover4"
+                    android:layout_width="120dp"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_6"
+                    android:layout_marginEnd="16dp" />
+
+                <!-- Details LinearLayout for Book 4 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/imageViewBookCover4"
+                    android:orientation="vertical">
+
+                    <!-- Book 4 Title -->
+                    <TextView
+                        android:id="@+id/textViewBookTitle4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="The Book with No Name"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!-- Book 4 Author(s) -->
+                    <TextView
+                        android:id="@+id/textViewBookAuthor4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Author(s): Anonymous"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_light_brown"/>
+
+                    <!-- Book 4 Publisher -->
+                    <TextView
+                        android:id="@+id/textViewBookPublisher4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Publisher: Michael O'Mara Books Ltd"
+                        android:textColor="@color/text_light_brown"
+                        android:textSize="14sp" />
+
+                    <!-- Book 4 Publication Date -->
+                    <TextView
+                        android:id="@+id/textViewBookPublicationDate4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Publication Date: 1 June 2007"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_light_brown"/>
+
+                    <!-- Book 4 Price -->
+                    <TextView
+                        android:id="@+id/textViewBookPrice4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Price: ₹420"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_light_brown"/>
+
+                    <!-- See More Button for Book 4 -->
+                    <Button
+                        android:id="@+id/buttonSeeMore4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:onClick="seeMore"
+                        android:text="See More"
+                        android:backgroundTint="@color/accent_lime_green"
+                        android:textColor="@color/dark_brown"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Book 5-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:background=" #FFFFFF "
+            android:padding="16dp">
+
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+            android:background=" #FFFFFF ">
+
+                <!-- Book 5 Cover Image -->
+                <ImageView
+                    android:id="@+id/imageViewBookCover5"
+                    android:layout_width="120dp"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_7"
+                    android:layout_marginEnd="16dp"/>
+
+                <!-- Details LinearLayout for Book 5 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/imageViewBookCover5"
+                    android:orientation="vertical">
+
+                    <!-- Book 5 Title -->
+                    <TextView
+                        android:id="@+id/textViewBookTitle5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Black Forest"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!-- Book 5 Author(s) -->
+                    <TextView
+                        android:id="@+id/textViewBookAuthor5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Author(s): Shane Lee"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_light_brown"/>
+
+                    <!-- Book 5 Publisher -->
+                    <TextView
+                        android:id="@+id/textViewBookPublisher5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Publisher: IngramSpark"
+                        android:textColor="@color/text_light_brown"
+                        android:textSize="14sp" />
+
+                    <!-- Book 5 Publication Date -->
+                    <TextView
+                        android:id="@+id/textViewBookPublicationDate5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Publication Date: 2 November 2020"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_light_brown"/>
+
+                    <!-- Book 5 Price -->
+                    <TextView
+                        android:id="@+id/textViewBookPrice5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Price: ₹885"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_light_brown"/>
+
+                    <!-- See More Button for Book 5 -->
+                    <Button
+                        android:id="@+id/buttonSeeMore5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:onClick="seeMore"
+                        android:text="See More"
+                        android:backgroundTint="@color/accent_lime_green"
+                        android:textColor="@color/dark_brown"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        <!-- Book 6-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:background=" #FFFFFF "
+            android:padding="16dp">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+            android:background=" #FFFFFF ">
+
+                <!-- Book 6 Cover Image -->
+                <ImageView
+                    android:id="@+id/imageViewBookCover6"
+                    android:layout_width="120dp"
+                    android:layout_height="160dp"
+                    android:layout_marginEnd="16dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_8" />
+
+                <!-- Details LinearLayout for Book 6 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/imageViewBookCover6"
+                    android:orientation="vertical">
+
+                    <!-- Book 6 Title -->
+                    <TextView
+                        android:id="@+id/textViewBookTitle6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Think and Grow Rich"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!-- Book 6 Author(s) -->
+                    <TextView
+                        android:id="@+id/textViewBookAuthor6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Author(s): Shane Lee"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_light_brown"/>
+
+                    <!-- Book 6 Publisher -->
+                    <TextView
+                        android:id="@+id/textViewBookPublisher6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Publisher: TarcherPerigee"
+                        android:textColor="@color/text_light_brown"
+                        android:textSize="14sp" />
+
+                    <!-- Book 6 Publication Date -->
+                    <TextView
+                        android:id="@+id/textViewBookPublicationDate6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Publication Date: 1 January 1900"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_light_brown"/>
+
+                    <!-- Book 6 Price -->
+                    <TextView
+                        android:id="@+id/textViewBookPrice6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Price: ₹435"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_light_brown"/>
+
+                    <!-- See More Button for Book 6 -->
+                    <Button
+                        android:id="@+id/buttonSeeMore6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:onClick="seeMore"
+                        android:text="See More"
+                        android:backgroundTint="@color/accent_lime_green"
+                        android:textColor="@color/dark_brown"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        <!-- Book 7-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:background=" #FFFFFF "
+            android:padding="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background=" #FFFFFF ">
+
+            <!-- Book 7 Cover Image -->
+            <ImageView
+                android:id="@+id/imageViewBookCover7"
+                android:layout_width="120dp"
+                android:layout_height="200dp"
+                android:layout_marginEnd="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_10" />
+
+            <!-- Details LinearLayout for Book 7 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/imageViewBookCover7"
+                android:orientation="vertical">
+
+                <!-- Book 7 Title -->
+                <TextView
+                    android:id="@+id/textViewBookTitle7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Learning How to Fly: Life Lessons for the Youth"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Book 7 Author(s) -->
+                <TextView
+                    android:id="@+id/textViewBookAuthor7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Author(s): A. P. J. Abdul Kalam"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_light_brown"/>
+
+                <!-- Book 7 Publisher -->
+                <TextView
+                    android:id="@+id/textViewBookPublisher7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Publisher: Rupa Publications India"
+                    android:textColor="@color/text_light_brown"
+                    android:textSize="14sp" />
+
+                <!-- Book 7 Publication Date -->
+                <TextView
+                    android:id="@+id/textViewBookPublicationDate7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Publication Date: 21 October 2016"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_light_brown"/>
+
+                <!-- Book 7 Price -->
+                <TextView
+                    android:id="@+id/textViewBookPrice7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Price: ₹190"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_light_brown"/>
+
+                <!-- See More Button for Book 7 -->
+                <Button
+                    android:id="@+id/buttonSeeMore7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:onClick="seeMore"
+                    android:text="See More"
+                    android:backgroundTint="@color/accent_lime_green"
+                    android:textColor="@color/dark_brown"/>
+            </LinearLayout>
+        </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        <!-- Book 8-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:background=" #FFFFFF "
+            android:padding="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background=" #FFFFFF ">
+
+            <!-- Book 8 Cover Image -->
+
+            <ImageView
+                android:id="@+id/imageViewBookCover8"
+                android:layout_width="120dp"
+                android:layout_height="200dp"
+                android:layout_marginEnd="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_11" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/imageViewBookCover8"
+                android:orientation="vertical">
+
+                <!-- Book 8 Title -->
+
+                <TextView
+                    android:id="@+id/textViewBookTitle8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" Love Story from the Heart: Sweet, Clean Romance"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewBookAuthor8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Author(s):Terry Atkinson"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_light_brown"/>
+
+                <TextView
+                    android:id="@+id/textViewBookPublisher8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Publisher:Terry Atkinson Books"
+                    android:textColor="@color/text_light_brown"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/textViewBookPublicationDate8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Publication Date:24 October 2017"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_light_brown"/>
+                <TextView
+                    android:id="@+id/textViewBookPrice8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Price: ₹249"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_light_brown"/>
+
+                <!-- Buy Button for Book 8 -->
+                <Button
+                    android:id="@+id/buttonSeeMore8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:onClick="seeMore"
+                    android:text="See More"
+                    android:backgroundTint="@color/accent_lime_green"
+                    android:textColor="@color/dark_brown"/>
+            </LinearLayout>
+        </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        <!-- Book 9-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:background=" #FFFFFF "
+            android:padding="16dp">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+            android:background=" #FFFFFF ">
+
+                <!-- Book 9 Cover Image -->
+                <ImageView
+                    android:id="@+id/imageViewBookCover9"
+                    android:layout_width="120dp"
+                    android:layout_height="200dp"
+                    android:layout_marginEnd="16dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_13" />
+
+                <!-- Details LinearLayout for Book 9 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/imageViewBookCover9"
+                    android:orientation="vertical">
+
+                    <!-- Book 9 Title -->
+                    <TextView
+                        android:id="@+id/textViewBookTitle9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Embrace the Wind"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!-- Book 9 Author(s) -->
+                    <TextView
+                        android:id="@+id/textViewBookAuthor9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Author(s): Susan Denning"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_light_brown"/>
+
+                    <!-- Book 9 Publisher -->
+                    <TextView
+                        android:id="@+id/textViewBookPublisher9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Publisher: Tstd, LLC/ DBA No Limit Press"
+                        android:textColor="@color/text_light_brown"
+                        android:textSize="14sp" />
+
+                    <!-- Book 9 Publication Date -->
+                    <TextView
+                        android:id="@+id/textViewBookPublicationDate9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Publication Date: 1 March 2017"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_light_brown"/>
+
+                    <!-- Book 9 Price -->
+                    <TextView
+                        android:id="@+id/textViewBookPrice9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Price: ₹83"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_light_brown"/>
+
+                    <!-- See More Button for Book 9 -->
+                    <Button
+                        android:id="@+id/buttonSeeMore9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:onClick="seeMore"
+                        android:text="See More"
+                        android:backgroundTint="@color/accent_lime_green"
+                        android:textColor="@color/dark_brown"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        <!-- Book 10-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:background=" #FFFFFF "
+            android:padding="16dp">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+            android:background=" #FFFFFF ">
+
+                <!-- Book 10 Cover Image -->
+
+                <ImageView
+                    android:id="@+id/imageViewBookCover10"
+                    android:layout_width="120dp"
+                    android:layout_height="200dp"
+                    android:layout_marginEnd="16dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_12" />
+
+                <!-- Details LinearLayout for Book 10 -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/imageViewBookCover10"
+                    android:orientation="vertical">
+
+                    <!-- Book 10 Title -->
+
+                    <TextView
+                        android:id="@+id/textViewBookTitle10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lost and Found"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewBookAuthor10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Author(s): Oliver Jeffers"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_light_brown"/>
+
+                    <TextView
+                        android:id="@+id/textViewBookPublisher10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Publisher: UK Children's"
+                        android:textColor="@color/text_light_brown"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/textViewBookPublicationDate10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Publication Date: 26 February 2015"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_light_brown"/>
+
+                    <TextView
+                        android:id="@+id/textViewBookPrice10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Price: ₹119"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_light_brown"/>
+
+                    <!-- Buy Button for Book 10 -->
+                    <Button
+                        android:id="@+id/buttonSeeMore10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:onClick="seeMore"
+                        android:text="See More"
+                        android:backgroundTint="@color/accent_lime_green"
+                        android:textColor="@color/dark_brown"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+</ScrollView>

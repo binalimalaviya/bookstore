@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#E8EAF6"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imageViewBookCover"
+        android:layout_width="343dp"
+        android:layout_height="377dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/thankyou" />
+
+    <Button
+        android:id="@+id/btnContinueShopping"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Continue Shopping"
+        android:textColor="@color/white" />
+</LinearLayout>
